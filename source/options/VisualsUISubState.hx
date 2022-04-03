@@ -89,24 +89,46 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.decimals = 1;
 		addOption(option);
 		
-		#if !mobile
 		var option:Option = new Option('FPS Counter',
 			'If unchecked, hides FPS Counter.',
 			'showFPS',
 			'bool',
-			true);
+			#if android false #else true #end);
 		addOption(option);
 		option.onChange = onChangeFPSCounter;
-		#end
+		
+		var option:Option = new Option('Pause Screen Song:',
+			"What song do you prefer for the Pause Screen?",
+			'pauseMusic',
+			'string',
+			'Tea Time',
+			['None', 'Breakfast', 'Tea Time']);
+		addOption(option);
+		option.onChange = onChangePauseMusic;
 
 		super();
 	}
 
-	#if !mobile
+	var changedMusic:Bool = false;
+	function onChangePauseMusic()
+	{
+		if(ClientPrefs.pauseMusic == 'None')
+			FlxG.sound.music.volume = 0;
+		else
+			FlxG.sound.playMusic(Paths.music(Paths.formatToSongPath(ClientPrefs.pauseMusic)));
+
+		changedMusic = true;
+	}
+
+	override function destroy()
+	{
+		if(changedMusic) FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		super.destroy();
+	}
+
 	function onChangeFPSCounter()
 	{
 		if(Main.fpsVar != null)
 			Main.fpsVar.visible = ClientPrefs.showFPS;
 	}
-	#end
 }
