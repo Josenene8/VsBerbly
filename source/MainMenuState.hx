@@ -152,12 +152,12 @@ class MainMenuState extends MusicBeatState
 		}
 		#end
 
-		super.create();
+   #if android
+   addVirtualPad(UP_DOWN, A_B);
+   #end
 
-  #if android
-	addVirtualPad(FULL, A_B);
-  #end
-}
+		super.create();
+	}
 
 	#if ACHIEVEMENTS_ALLOWED
 	// Unlocks "Freaky on a Friday Night" achievement
