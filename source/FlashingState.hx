@@ -18,12 +18,7 @@ class FlashingState extends MusicBeatState
 	var warnText:FlxText;
 	override function create()
 	{
-   #if android
-   addVirtualPad(UP_DOWN, A_B);
-   #end
-
 		super.create();
-	}
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
@@ -38,6 +33,10 @@ class FlashingState extends MusicBeatState
 		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
+
+                #if android
+	        addVirtualPad(NONE, A_B);
+                #end
 	}
 
 	override function update(elapsed:Float)
