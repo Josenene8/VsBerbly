@@ -190,6 +190,10 @@ class StoryMenuState extends MusicBeatState
 
 		super.create();
 	}
+	
+	#if android
+	addVirtualPad(FULL, A_B);
+  #end
 
 	override function closeSubState() {
 		persistentUpdate = true;
