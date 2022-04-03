@@ -96,15 +96,6 @@ class VisualsUISubState extends BaseOptionsMenu
 			#if android false #else true #end);
 		addOption(option);
 		option.onChange = onChangeFPSCounter;
-		
-		var option:Option = new Option('Pause Screen Song:',
-			"What song do you prefer for the Pause Screen?",
-			'pauseMusic',
-			'string',
-			'Tea Time',
-			['None', 'Breakfast', 'Tea Time']);
-		addOption(option);
-		option.onChange = onChangePauseMusic;
 
 		super();
 	}
