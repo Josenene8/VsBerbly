@@ -344,6 +344,10 @@ class ModsMenuState extends MusicBeatState
 
 		super.create();
 	}
+	
+	#if android
+	addVirtualPad(FULL, A_B);
+  #end
 
 	function getIntArray(max:Int):Array<Int>{
 		var arr:Array<Int> = [];
