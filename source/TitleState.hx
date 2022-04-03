@@ -168,6 +168,7 @@ class TitleState extends MusicBeatState
 		// DEBUG BULLSHIT
 
 		swagShader = new ColorSwap();
+		
    #if android
    addVirtualPad(UP_DOWN, A_B);
    #end
