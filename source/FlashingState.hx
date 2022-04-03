@@ -18,7 +18,11 @@ class FlashingState extends MusicBeatState
 	var warnText:FlxText;
 	override function create()
 	{
-		super.create();
+		super.create
+		
+  #if android
+	addVirtualPad(FULL, A_B);
+  #end
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
