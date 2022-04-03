@@ -59,6 +59,10 @@ class GameOverSubstate extends MusicBeatSubstate
 		super.create();
 	}
 
+  #if android
+	addVirtualPad(FULL, A_B);
+  #end
+
 	public function new(x:Float, y:Float, camX:Float, camY:Float)
 	{
 		super();
