@@ -169,6 +169,10 @@ class TitleState extends MusicBeatState
 
 		swagShader = new ColorSwap();
 		super.create();
+		
+	#if android
+	addVirtualPad(FULL, A_B);
+  #end
 
 		FlxG.save.bind('funkin', 'ninjamuffin99');
 		ClientPrefs.loadPrefs();
