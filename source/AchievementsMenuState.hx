@@ -70,16 +70,12 @@ class AchievementsMenuState extends MusicBeatState
 		add(descText);
 		changeSelection();
 
-   #if android
-   addVirtualPad(UP_DOWN, A_B);
-   #end
+                #if android
+	        addVirtualPad(UP_DOWN, B);
+                #end
 
 		super.create();
 	}
-
-  #if android
-	addVirtualPad(FULL, A_B);
-  #end
 
 	override function update(elapsed:Float) {
 		super.update(elapsed);
