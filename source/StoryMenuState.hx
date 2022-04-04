@@ -119,11 +119,6 @@ class StoryMenuState extends MusicBeatState
 				lock.antialiasing = ClientPrefs.globalAntialiasing;
 				grpLocks.add(lock);
 			}
-		}
-
-		WeekData.setDirectoryFromWeek(loadedWeeks[0]);
-		var charArray:Array<String> = loadedWeeks[0].weekCharacters;
-		for (char in 0...3)
 		{
 			var weekCharacterThing:MenuCharacter = new MenuCharacter((FlxG.width * 0.25) * (1 + char) - 150, charArray[char]);
 			weekCharacterThing.y += 70;
