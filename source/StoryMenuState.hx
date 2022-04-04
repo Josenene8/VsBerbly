@@ -184,7 +184,7 @@ class StoryMenuState extends MusicBeatState
 		super.create();
 	}
 
-	override function closeSubState() {
+	override function closeSubState()
 		persistentUpdate = true;
 		changeWeek();
 		super.closeSubState();
